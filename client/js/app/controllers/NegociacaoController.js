@@ -28,6 +28,14 @@ class NegociacaoController {
             this._inputQuantidade.value,
             this._inputValor.value
         );
+
+        let diaMesAno = negociacao.data.getDate()
+            + '/' + (negociacao.data.getMonth() + 1)
+            + '/' + negociacao.data.getUTCFullYear();
+
+        console.log(diaMesAno);
+        
+        
         
     }
 }
