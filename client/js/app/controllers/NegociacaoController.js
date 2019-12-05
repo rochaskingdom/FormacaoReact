@@ -14,15 +14,9 @@ class NegociacaoController {
 
         event.preventDefault();
 
-        console.log(typeof(this._inputData.value));
+        let data = new Date(this._inputData.value.replace(/-/g, ','));
 
-        let negociacao = new NegociacaoController(
-            this._inoutData.values,
-            this._inputQuantidade.value,
-            this._inputValor.values
-        );
-
-        console.log(negociacao);
-
+        console.log(data);
+        
     }
 }
