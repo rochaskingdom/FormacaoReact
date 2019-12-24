@@ -19,7 +19,7 @@ class NegociacoesView {
 
         <tbody>
             ${model.negociacoes.map(n => `
-            
+
                     <tr>
                         <td>${DateHelper.dataParaTexto(n.data)}</td>
                         <td>${n.quantidade}</td>
@@ -31,6 +31,15 @@ class NegociacoesView {
         </tbody>
 
         <tfoot>
+            <td colspan="3"></td>
+            <td>${
+                (function() {
+                    let total = 0;
+                    model.negociacoes.forEach(n => total += n.volume);
+                    return total;
+                })()
+            }</td>
+
         </tfoot>
     </table>     
     `;
